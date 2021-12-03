@@ -1,0 +1,210 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Texture/spritesheet_jake.png" type="Texture" id=1]
+[ext_resource path="res://Script/PlayerController.gd" type="Script" id=2]
+[ext_resource path="res://Prefabs/Util/Explotion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/Player/Timestop.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 26.189, 63.5587 )
+
+[sub_resource type="Animation" id=2]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 20 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("swordHit/melee:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 13, 14 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 1.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 9, 8, 11 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.911
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 12, 13 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "knock"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 23, 9, 23, 9, 23, 9 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "runInvisible"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 23, 2, 23, 4, 23, 6, 23 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 1.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 17.6941, 50.8094 )
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 89
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.845, 0.903994 )
+texture = ExtResource( 1 )
+hframes = 12
+vframes = 2
+frame = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 1, 1.3 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/attack = SubResource( 2 )
+anims/fall = SubResource( 3 )
+anims/idle = SubResource( 4 )
+anims/jump = SubResource( 5 )
+anims/knock = SubResource( 6 )
+anims/run = SubResource( 7 )
+anims/runInvisible = SubResource( 8 )
+anims/walk = SubResource( 9 )
+
+[node name="swordHit" type="Area2D" parent="."]
+position = Vector2( 0, 0.71 )
+scale = Vector2( 0.845, 0.903994 )
+collision_layer = 32
+collision_mask = 88
+
+[node name="melee" type="CollisionShape2D" parent="swordHit"]
+position = Vector2( 84.4674, -23.306 )
+shape = SubResource( 10 )
+disabled = true
+
+[node name="TimerMelee" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="TimerKnock" type="Timer" parent="."]
+one_shot = true
+
+[node name="TimerInvisible" type="Timer" parent="."]
+one_shot = true
+
+[node name="TimerGhost" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Explotion" parent="." instance=ExtResource( 3 )]
+
+[node name="timestop" parent="." instance=ExtResource( 4 )]
+
+[connection signal="body_entered" from="swordHit" to="." method="_on_swordHit_body_entered"]
+[connection signal="timeout" from="TimerMelee" to="." method="_on_TimerMelee_timeout"]
+[connection signal="timeout" from="TimerKnock" to="." method="_on_TimerKnock_timeout"]
+[connection signal="timeout" from="TimerInvisible" to="." method="_on_TimerInvisible_timeout"]
+[connection signal="timeout" from="TimerGhost" to="." method="_on_TimerGhost_timeout"]

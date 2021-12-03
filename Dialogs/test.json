@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Jack",
+        "dialog": "This is quick tutorial"
+    },
+    {
+        "name": "Jack",
+        "dialog": "Fire + Water or Ice = increasing damage"
+    },
+    {
+        "name": "Jack",
+        "dialog": "Water + Ice = Frozen Enemy"
+    },
+    {
+        "name": "Jack",
+        "dialog": "Too close with the enemy can hurt you"
+    }
+]

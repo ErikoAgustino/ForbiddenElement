@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Texture/tileset/castle2.tres" type="TileSet" id=1]
+[ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=2]
+
+[node name="Level2" type="Node2D"]
+
+[node name="dinding" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 131074, 12, 0, 131077, 20, 0, 131079, 16, 0, 131082, 16, 0, 131085, 16, 0, 131088, 16, 0, 131091, 16, 0, 131094, 15, 0, 262180, 12, 0, 262183, 12, 0, 262186, 18, 0, 327687, 16, 0, 327690, 16, 0, 327693, 16, 0, 327696, 16, 0, 327699, 16, 0, 327702, 15, 0, 458757, 20, 0, 524295, 16, 0, 524298, 16, 0, 524301, 16, 0, 524304, 16, 0, 524307, 16, 0, 524310, 15, 0, 589826, 12, 0, 720903, 16, 0, 720906, 16, 0, 720909, 16, 0, 720912, 16, 0, 720915, 16, 0, 720918, 15, 0, 786437, 20, 0, 917511, 16, 0, 917514, 16, 0, 917517, 16, 0, 917520, 16, 0, 917523, 16, 0, 917526, 15, 0, 1048578, 12, 0 )
+
+[node name="lantai" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 0, 7, 0, 4, 8, 0, 12, 8, 0, 14, 8, 0, 19, 8, 0, 24, 8, 0, 34, 8, 0, 262144, 6, 0, 589824, 6, 0, 1114112, 5, 0, 1114114, 1, 0, 1114128, 1, 0, 1114142, 1, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 353.919, 266.012 )

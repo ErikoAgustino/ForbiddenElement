@@ -1,0 +1,112 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Script/batman.gd" type="Script" id=1]
+[ext_resource path="res://Texture/eye_monster_idle-removebg-preview.png" type="Texture" id=2]
+[ext_resource path="res://Prefabs/Util/Explotion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/Enemy/enemyUI/enemyHP.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/ElementalReaction.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10.0649, 10.0649 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1, 13 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 1, 13 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 10, 1 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 10, 1 )
+
+[node name="batman" type="KinematicBody2D"]
+collision_layer = 8
+collision_mask = 34
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2.44867, 0.0755997 )
+scale = Vector2( 0.78037, 0.673217 )
+texture = ExtResource( 2 )
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+root_node = NodePath("../..")
+anims/RESET = SubResource( 1 )
+anims/idle = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.472092, -0.0472679 )
+shape = SubResource( 3 )
+
+[node name="HP" parent="." instance=ExtResource( 4 )]
+margin_left = -35.8917
+margin_top = -32.1081
+margin_right = 44.1083
+margin_bottom = -20.1081
+
+[node name="Reaction" parent="." instance=ExtResource( 5 )]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AreaCollide" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="left" type="CollisionShape2D" parent="AreaCollide"]
+position = Vector2( -11.9062, -0.12132 )
+shape = SubResource( 4 )
+
+[node name="right" type="CollisionShape2D" parent="AreaCollide"]
+position = Vector2( 12.375, -0.125 )
+shape = SubResource( 5 )
+
+[node name="top" type="CollisionShape2D" parent="AreaCollide"]
+position = Vector2( 0.303546, -11.8097 )
+shape = SubResource( 6 )
+
+[node name="bottom" type="CollisionShape2D" parent="AreaCollide"]
+position = Vector2( -0.0396881, 12.2254 )
+shape = SubResource( 7 )
+
+[node name="Explotion" parent="." instance=ExtResource( 3 )]
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="body_entered" from="AreaCollide" to="." method="_on_AreaCollide_body_entered"]
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]

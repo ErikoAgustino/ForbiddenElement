@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/serammm.mp3-0bfa32c4f9dde810adf2a4eaeeabfc4e.mp3str"
+
+[deps]
+
+source_file="res://Texture/music/serammm.mp3"
+dest_files=[ "res://.import/serammm.mp3-0bfa32c4f9dde810adf2a4eaeeabfc4e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

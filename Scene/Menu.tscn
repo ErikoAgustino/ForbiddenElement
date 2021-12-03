@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Script/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Texture/cover w title new.jpg" type="Texture" id=2]
+[ext_resource path="res://Prefabs/Util/Transition.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.639216, 0.588235, 0.933333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.639216, 0.588235, 0.933333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.639216, 0.588235, 0.933333, 1 )
+
+[node name="Menu" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+grow_vertical = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cover w title new" type="Sprite" parent="."]
+position = Vector2( 512.896, 300.02 )
+scale = Vector2( 0.500861, 0.500861 )
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -151.825
+margin_top = 100.0
+margin_right = -7.82501
+margin_bottom = 168.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+margin_right = 144.0
+margin_bottom = 20.0
+custom_styles/focus = SubResource( 1 )
+text = "Start"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 144.0
+margin_bottom = 44.0
+custom_styles/focus = SubResource( 2 )
+text = "Credits"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 144.0
+margin_bottom = 68.0
+custom_styles/focus = SubResource( 3 )
+text = "Quit"
+
+[node name="Transition" parent="." instance=ExtResource( 4 )]
+margin_left = -2.99658
+margin_top = -2.49493
+margin_right = -2.99658
+margin_bottom = -2.49493
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

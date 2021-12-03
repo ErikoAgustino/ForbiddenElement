@@ -1,0 +1,121 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Texture/1.png" type="Texture" id=1]
+[ext_resource path="res://Script/WaterTornado.gd" type="Script" id=2]
+[ext_resource path="res://Texture/2.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "start"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "hit"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 37.4765, 108.35 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 5.2, 112 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 5.2, 112 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 39, 3.58975 )
+
+[node name="WaterTornado" type="KinematicBody2D"]
+collision_layer = 16
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1.6613, -139.368 )
+scale = Vector2( 2.86532, 2.86532 )
+texture = ExtResource( 1 )
+hframes = 4
+vframes = 3
+frame = 11
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/idle = SubResource( 1 )
+anims/start = SubResource( 2 )
+
+[node name="hit" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1.6613, -139.368 )
+scale = Vector2( 2.86532, 2.86532 )
+texture = ExtResource( 3 )
+hframes = 3
+vframes = 3
+frame = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hit"]
+anims/hit = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.916718, -108.604 )
+shape = SubResource( 4 )
+
+[node name="AreaCollide" type="Area2D" parent="."]
+position = Vector2( 1.75761, -139.717 )
+collision_layer = 80
+collision_mask = 67
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaCollide"]
+position = Vector2( -46.3521, 27.5796 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaCollide"]
+position = Vector2( 44.1476, 27.5795 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="AreaCollide"]
+position = Vector2( -1, -84 )
+shape = SubResource( 7 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="AreaCollide" to="." method="_on_AreaCollide_area_entered"]
+[connection signal="body_entered" from="AreaCollide" to="." method="_on_AreaCollide_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

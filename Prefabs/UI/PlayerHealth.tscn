@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Script/Health.gd" type="Script" id=1]
+[ext_resource path="res://Texture/Styles/stHealthBar.tres" type="Theme" id=2]
+[ext_resource path="res://Texture/element.png" type="Texture" id=4]
+
+[node name="PlayerHealth" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -6.10352e-05
+margin_right = -6.10352e-05
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP" type="ProgressBar" parent="."]
+margin_left = 8.48532
+margin_top = 16.1128
+margin_right = 343.485
+margin_bottom = 40.1128
+theme = ExtResource( 2 )
+max_value = 200.0
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Elements" type="Sprite" parent="."]
+position = Vector2( 363.504, 24.891 )
+scale = Vector2( 1.70711, 1.70711 )
+texture = ExtResource( 4 )
+hframes = 3
+
+[node name="hpText" type="RichTextLabel" parent="."]
+margin_left = 12.0
+margin_top = 21.0
+margin_right = 37.0
+margin_bottom = 36.0
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

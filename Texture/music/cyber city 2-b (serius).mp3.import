@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cyber city 2-b (serius).mp3-9bfabd017b7318b10f25f4fbfb8df5a4.mp3str"
+
+[deps]
+
+source_file="res://Texture/music/cyber city 2-b (serius).mp3"
+dest_files=[ "res://.import/cyber city 2-b (serius).mp3-9bfabd017b7318b10f25f4fbfb8df5a4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

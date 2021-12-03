@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Texture/sign.png" type="Texture" id=1]
+[ext_resource path="res://Texture/Fonts/ZenOldMincho-Black.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Script/Tutor.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 86.4004, 56.0495 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "idle"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="DialogBox" type="Area2D"]
+position = Vector2( 4124.27, -26.8356 )
+script = ExtResource( 3 )
+dialog = NodePath("../Canvas/Dialog")
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 42.5038, -30.9119 )
+scale = Vector2( 1.7728, 1.7728 )
+texture = ExtResource( 1 )
+hframes = 4
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/idle = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 42.0024, -30.204 )
+shape = SubResource( 5 )
+
+[node name="keySign" type="Node2D" parent="."]
+
+[node name="text" type="RichTextLabel" parent="keySign"]
+margin_left = -10.0
+margin_top = -200.0
+margin_right = 90.0
+margin_bottom = -100.0
+custom_fonts/normal_font = SubResource( 7 )
+custom_styles/normal = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[center] F [/center]"
+meta_underlined = false
+text = " F "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="keySign"]
+anims/idle = SubResource( 8 )
+
+[connection signal="body_entered" from="." to="." method="_on_Tutor_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Tutor_body_exited"]
