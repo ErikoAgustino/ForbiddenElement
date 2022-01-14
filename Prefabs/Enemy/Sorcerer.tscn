@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Script/Sorcerer.gd" type="Script" id=1]
+[ext_resource path="res://Texture/SorcererVillain.png" type="Texture" id=2]
+[ext_resource path="res://Prefabs/Enemy/enemyUI/enemyHP.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/Util/Explosion.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("SorcererVillain:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "attack"
+length = 1.1
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("SorcererVillain:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 9, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 )
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 23.0733, 87.9581 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 2, 87 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 2, 87 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 24, 2 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 24, 2 )
+
+[node name="Sorcerer" type="KinematicBody2D"]
+collision_layer = 8
+collision_mask = 33
+script = ExtResource( 1 )
+
+[node name="SorcererVillain" type="Sprite" parent="."]
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+hframes = 10
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/attack = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -10.2098, 36.9623 )
+shape = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 17.3906, 36.418 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -38.1126, 35.2778 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -10.2655, 128.632 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -10.3415, -55.1257 )
+shape = SubResource( 7 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -10.25, 36.5 )
+scale = Vector2( 2.025, 7.75 )
+
+[node name="HP" parent="." instance=ExtResource( 3 )]
+margin_left = -43.438
+margin_top = -91.6436
+margin_right = 36.562
+margin_bottom = -79.6436
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Explotion" parent="." instance=ExtResource( 4 )]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cyberpunk city 2 (happy).mp3-10aba4fc17a46f39338f0a014dfb0b30.mp3str"
+
+[deps]
+
+source_file="res://Texture/music/cyberpunk city 2 (happy).mp3"
+dest_files=[ "res://.import/cyberpunk city 2 (happy).mp3-10aba4fc17a46f39338f0a014dfb0b30.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

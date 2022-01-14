@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Texture/IceVFX 1 Repeatable.png" type="Texture" id=1]
+[ext_resource path="res://Script/IceBullet.gd" type="Script" id=2]
+[ext_resource path="res://Texture/Ice VFX 1 Hit.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.67825
+height = 17.4347
+
+[sub_resource type="Animation" id=3]
+resource_name = "hit"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
+
+[node name="IceBullet" type="KinematicBody2D"]
+position = Vector2( 0.335197, 4.20372 )
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1.42509, -0.93071 )
+scale = Vector2( 1.27832, 1.29472 )
+texture = ExtResource( 1 )
+hframes = 10
+frame = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/idle = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.215523, -0.168323 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Hit" type="Sprite" parent="."]
+visible = false
+position = Vector2( 10, 0 )
+scale = Vector2( 2.83061, 2.83061 )
+texture = ExtResource( 3 )
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hit"]
+anims/hit = SubResource( 3 )
+
+[node name="AreaCollide" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaCollide"]
+position = Vector2( -0.980751, 0.259483 )
+scale = Vector2( 0.470548, 0.615572 )
+polygon = PoolVector2Array( 3.39848, 10.7223, 3.4647, 9.53041, 6.24579, 9.53041, 11.8742, 9.66285, 17.7675, 9.66285, 27.0378, 9.4642, 30.1499, 8.60338, 32.4675, 5.55743, 34.5864, 0.988493, 34.3878, -2.05746, 33.3945, -5.10342, 31.6067, -7.81829, 29.0905, -9.73857, 25.1837, -10.9967, 20.3499, -11.2615, 15.0526, -11.1291, -24.8759, -10.6656, -27.0611, -9.80479, -29.776, -8.34802, -31.3651, -6.75883, -32.4246, -4.50747, -33.0868, -2.25611, -33.153, -0.00475311, -32.9543, 1.45201, -32.0273, 3.8358, -30.5705, 6.35203, -29.2462, 7.54392, -27.1273, 8.60338, -24.0151, 9.8615, 2.40524, 9.59663, 2.2728, 10.4574, -24.4124, 10.7223, -25.9354, 10.3912, -27.9881, 9.4642, -30.6368, 7.47771, -32.2922, 5.09391, -34.1462, -0.203402, -33.4179, -6.03045, -31.7624, -8.14937, -29.2462, -9.871, -24.4786, -11.7913, 26.4418, -11.9237, 29.3553, -10.798, 32.004, -8.81154, 33.527, -6.89126, 34.9175, -4.11017, 35.3148, -1.46151, 35.1824, 0.458763, 35.1162, 2.51147, 34.1891, 4.6304, 32.2026, 7.54392, 30.3486, 9.59663, 27.5013, 10.5899, 23.131, 11.1858, 14.5891, 10.7223 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="AreaCollide" to="." method="_on_AreaCollide_body_entered"]

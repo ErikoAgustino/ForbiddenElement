@@ -1,15 +1,16 @@
-extends Control
+extends Node2D
 
 
+var once = true
+var once2 = true
 func _ready():
-	visible = true	
-	$HBoxContainer/Revive.grab_focus()
+	pass
 
-
-func _on_Revive_pressed():
-	GlobalPlayer.resetHealth()
-	get_tree().change_scene("res://Scene/level0.tscn")
-	
-func _on_Exit_pressed():
-	get_tree().change_scene("res://Scene/Menu.tscn")
+func _process(delta):
+	if(get_parent().get_node("Canvas/DialogEnd") == null and once):
+		once = false
+		get_parent().get_node("Canvas/TextTransition").TextTransitionActive()
+	if(get_parent().get_node("Canvas/DialogFinal") == null and once2):
+		once2 = false
+		get_tree().change_scene("res://Scene/EndScene.tscn")
 	

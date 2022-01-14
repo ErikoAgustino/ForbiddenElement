@@ -8,7 +8,7 @@ var itemPath = "res://Prefabs/InventoryItems/Carrot.tscn"
 var slotIndex
 
 func _ready():
-	description = "carrot + hp 20"
+	description = "+ hp 20"
 	hp = 20
 	
 func UseItem():
@@ -21,7 +21,7 @@ func getDescription():
 	return description
 	
 func getType():
-	return "potion"
+	return "item"
 	
 func getInstance():
 	var temp = load(itemPath).instance()

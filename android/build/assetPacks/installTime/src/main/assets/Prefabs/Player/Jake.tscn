@@ -1,0 +1,622 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Texture/cutout.png" type="Texture" id=1]
+[ext_resource path="res://Script/PlayerAnimation.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "death1"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skeleton2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Skeleton2D:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Skeleton2D/badan1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 107.665, 83.6085 ), Vector2( 102.934, 96.6196 ), Vector2( 129.908, 119.05 ), Vector2( 138.145, 122.474 ), Vector2( 140.313, 137.652 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Skeleton2D/badan1:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -1.50324, 28.4153, 8.61838, 59.8322, 76.3643 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Skeleton2D/badan1/badan2/kaki kanan2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 20.9416, 12.4047 ), Vector2( 20.9416, 12.4047 ), Vector2( 20.9416, 12.4047 ), Vector2( 20.9416, 12.4047 ), Vector2( 20.9416, 12.4047 ), Vector2( 20.9416, 12.4047 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Skeleton2D/badan1/badan2/kaki kanan2:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 26.5733, 24.1136, 23.6629, 54.0335, 33.2916, 32.2375 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Skeleton2D/badan1/badan2/kaki kanan2/kaki kanan 2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 24.5623, -5.81614 ), Vector2( 24.5623, -5.81614 ), Vector2( 24.5623, -5.81614 ), Vector2( 24.5623, -5.81614 ), Vector2( 24.5623, -5.81614 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Skeleton2D/badan1/badan2/kaki kanan2/kaki kanan 2:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 13.1942, 66.6512, 57.8792, 3.17722, 27.4234, 7.75671 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Skeleton2D/badan1/badan2/kaki kanan2/kaki kanan 2/telapak:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.3, 0.7, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 35.4153, 2.79291 ), Vector2( 35.4153, 2.79291 ), Vector2( 35.4153, 2.79291 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Skeleton2D/badan1/badan2/kaki kanan2/kaki kanan 2/telapak:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -101.975, -87.1047, -77.0944, -52.9656, -31.5767 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Skeleton2D/badan1/badan2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Skeleton2D/badan1/badan2:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 85.4369, 55.6915, 95.7004, 74.209 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Skeleton2D/badan1/leher/bahu kanan/kanan:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.759598, 9.97575 ), Vector2( -0.759598, 9.97575 ), Vector2( 3.14102, 6.57892 ), Vector2( 3.14102, 6.57892 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Skeleton2D/badan1/leher/bahu kanan/kanan:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 155.528, 120.566, 112.842, 166.211 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Skeleton2D/badan1/leher/bahu kanan/kanan/kanan bawah:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 33.0619, 2.38651 ), Vector2( 33.0619, 2.38651 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Skeleton2D/badan1/leher/bahu kanan/kanan/kanan bawah:rotation_degrees")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 19.4362, 113.676, 89.9188, 101.503 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Skeleton2D/badan1/badan2/kaki kiri/kaki kiri2/telapak:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 32.6883, 2.47858 ), Vector2( 32.6883, 2.47858 ), Vector2( 32.6883, 2.47858 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Skeleton2D/badan1/badan2/kaki kiri/kaki kiri2/telapak:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -99.5155, -115.287, -58.599, -62.0992, 277.447, 312.14 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Skeleton2D/badan1/badan2/kaki kiri/kaki kiri2:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 24.5623, -5.81614 ), Vector2( 24.5623, -5.81614 ), Vector2( 24.5623, -5.81614 ), Vector2( 24.5623, -5.81614 ), Vector2( 24.5623, -5.81614 ), Vector2( 24.5623, -5.81614 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Skeleton2D/badan1/badan2/kaki kiri/kaki kiri2:rotation_degrees")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 27.0007, 74.2658, 75.1636, 99.116, 60.9702, -21.2037 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Skeleton2D/badan1/badan2/kaki kiri:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 21.3993, -7.65768 ), Vector2( 21.3993, -7.65768 ), Vector2( 19.9161, -5.04142 ), Vector2( 18.391, -2.35139 ), Vector2( 21.3993, -7.65768 ), Vector2( 25.5431, 0.923927 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Skeleton2D/badan1/badan2/kaki kiri:rotation_degrees")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.74641, -28.8223, 2.39987, -28.8223, 56.4469, 53.5669 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Skeleton2D/badan1/leher/bahu kiri/kiri/kiri bawah:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.0373, 28.2535 ) ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Skeleton2D/badan1/leher/bahu kiri/kiri/kiri bawah:rotation_degrees")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0, 0.7, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 7.46071, 46.2922, -3.74839 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Skeleton2D/badan1/leher/bahu kiri/kiri:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0, 0.7, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1.27727, -12.6803 ), Vector2( -1.27727, -12.6803 ), Vector2( -1.27727, -12.6803 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Skeleton2D/badan1/leher/bahu kiri/kiri:rotation_degrees")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0, 0.7, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 156.541, 168.762, 46.8451, 81.008 ]
+}
+tracks/26/type = "bezier"
+tracks/26/path = NodePath("badan1/kepala2:position:x")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"points": PoolRealArray( 71.59, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/27/type = "bezier"
+tracks/27/path = NodePath("badan1/kepala2:position:y")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"points": PoolRealArray( 18.5948, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/28/type = "bezier"
+tracks/28/path = NodePath("badan1/kepala2:rotation_degrees")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[node name="Jake" type="Node2D"]
+position = Vector2( -93, -90 )
+script = ExtResource( 2 )
+
+[node name="badan1" type="Polygon2D" parent="."]
+position = Vector2( 5.69778, -18.3596 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 104.008, 74.684, 98.3122, 76.1608, 92.1941, 79.9582, 87.9747, 85.4435, 86.9198, 89.4519, 90.5063, 90.0848, 93.038, 88.1861, 89.6624, 96.2029, 85.2321, 104.431, 86.9198, 116.456, 95.7806, 120.676, 107.384, 122.996, 113.502, 117.933, 117.511, 105.697, 120.464, 96.2029, 120.886, 91.9835, 124.051, 89.03, 122.152, 81.646, 110.338, 77.6376 )
+uv = PoolVector2Array( 104.008, 74.684, 98.3122, 76.1608, 92.1941, 79.9582, 87.9747, 85.4435, 86.9198, 89.4519, 90.5063, 90.0848, 93.038, 88.1861, 89.6624, 96.2029, 85.2321, 104.431, 86.9198, 116.456, 95.7806, 120.676, 107.384, 122.996, 113.502, 117.933, 117.511, 105.697, 120.464, 96.2029, 120.886, 91.9835, 124.051, 89.03, 122.152, 81.646, 110.338, 77.6376 )
+bones = [ "pedang", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1", PoolRealArray( 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "badan1/leher", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="kepala1" type="Polygon2D" parent="badan1"]
+position = Vector2( -8.86324, 16.9081 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 94.7257, 18.3544, 95.3587, 22.7848, 96.4135, 26.1603, 93.2489, 26.3713, 88.6076, 26.3713, 91.7721, 30.5907, 95.5696, 31.6456, 91.3502, 33.1224, 91.7721, 34.8101, 94.9367, 38.6076, 91.1392, 43.2489, 94.7257, 44.3038, 93.038, 48.7342, 98.3122, 51.2658, 95.1477, 54.6413, 104.008, 55.2743, 101.899, 58.2278, 107.384, 58.0169, 113.291, 61.8143, 115.401, 64.346, 114.979, 66.8776, 122.785, 66.4557, 122.785, 63.5021, 126.582, 63.2911, 132.7, 59.2827, 136.92, 54.2194, 137.342, 51.4768, 135.021, 48.5232, 134.81, 43.4599, 136.709, 41.1392, 143.46, 44.0928, 147.679, 46.6245, 150, 46.2025, 148.734, 41.7722, 141.772, 37.5527, 144.515, 35.443, 144.304, 26.5823, 141.561, 18.5654, 134.177, 12.6582, 125.527, 9.07173, 116.878, 9.91561, 110.549, 13.5021, 105.485, 17.5105, 102.954, 21.73, 97.6793, 20.0422 )
+uv = PoolVector2Array( 94.7257, 18.3544, 95.3587, 22.7848, 96.4135, 26.1603, 93.2489, 26.3713, 88.6076, 26.3713, 91.7721, 30.5907, 95.5696, 31.6456, 91.3502, 33.1224, 91.7721, 34.8101, 94.9367, 38.6076, 91.1392, 43.2489, 94.7257, 44.3038, 93.038, 48.7342, 98.3122, 51.2658, 95.1477, 54.6413, 104.008, 55.2743, 101.899, 58.2278, 107.384, 58.0169, 113.291, 61.8143, 115.401, 64.346, 114.979, 66.8776, 122.785, 66.4557, 122.785, 63.5021, 126.582, 63.2911, 132.7, 59.2827, 136.92, 54.2194, 137.342, 51.4768, 135.021, 48.5232, 134.81, 43.4599, 136.709, 41.1392, 143.46, 44.0928, 147.679, 46.6245, 150, 46.2025, 148.734, 41.7722, 141.772, 37.5527, 144.515, 35.443, 144.304, 26.5823, 141.561, 18.5654, 134.177, 12.6582, 125.527, 9.07173, 116.878, 9.91561, 110.549, 13.5021, 105.485, 17.5105, 102.954, 21.73, 97.6793, 20.0422 )
+bones = [ "pedang", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala", PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "badan1/leher/bahu kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="tgn kiri" type="Polygon2D" parent="badan1"]
+position = Vector2( -18.3409, 2.76495 )
+z_index = -1
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 138.397, 79.3253, 132.7, 84.3886, 131.013, 95.781, 134.81, 106.751, 135.443, 114.135, 140.084, 113.924, 145.781, 108.228, 146.203, 100.844, 145.781, 93.0384, 143.882, 81.0131 )
+uv = PoolVector2Array( 138.397, 79.3253, 132.7, 84.3886, 131.013, 95.781, 134.81, 106.751, 135.443, 114.135, 140.084, 113.924, 145.781, 108.228, 146.203, 100.844, 145.781, 93.0384, 143.882, 81.0131 )
+bones = [ "pedang", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan", PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "badan1/leher/bahu kanan/kanan/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="tgn kiri2" type="Polygon2D" parent="badan1/tgn kiri"]
+position = Vector2( -25.0616, -6.32365 )
+z_index = 1
+texture = ExtResource( 1 )
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PoolVector2Array( 158.196, 121.281, 154.641, 121.941, 152.321, 129.958, 150, 132.701, 146.835, 134.811, 147.468, 136.709, 151.899, 136.709, 149.789, 139.03, 145.781, 139.241, 146.413, 141.984, 148.945, 143.038, 151.688, 143.249, 153.376, 143.671, 155.485, 143.038, 157.806, 143.882, 159.072, 142.827, 161.603, 142.195, 164.768, 136.709, 166.245, 131.646, 169.198, 123.207, 168.084, 118.179, 165.918, 117.32 )
+uv = PoolVector2Array( 157.384, 111.393, 154.641, 121.941, 152.321, 129.958, 150, 132.701, 146.835, 134.811, 147.468, 136.709, 151.899, 136.709, 149.789, 139.03, 145.781, 139.241, 146.413, 141.984, 148.945, 143.038, 151.688, 143.249, 153.376, 143.671, 155.485, 143.038, 157.806, 143.882, 159.072, 142.827, 161.603, 142.195, 164.768, 136.709, 166.245, 131.646, 169.198, 123.207, 171.519, 114.979, 169.831, 111.182 )
+bones = [ "pedang", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kanan bawah", PoolRealArray( 0.9, 0.9, 0.45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.45, 0.9, 0.9, 0.45 ), "badan1/leher/bahu kanan/kanan/kanan bawah/telapak2", PoolRealArray( 0, 0, 0.45, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 1, 1, 0.45, 0, 0, 0 ), "badan1/badan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "kepala2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="pedang" type="Polygon2D" parent="badan1"]
+position = Vector2( 89.2656, -34.1868 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 6.75105, 166.471, 7.173, 171.323, 11.1814, 171.956, 21.097, 168.159, 26.7932, 163.306, 46.2025, 151.281, 54.6413, 145.796, 53.7975, 140.943, 46.2025, 142.209, 28.0591, 153.391, 21.308, 157.821 )
+uv = PoolVector2Array( 6.75105, 166.471, 7.173, 171.323, 11.1814, 171.956, 21.097, 168.159, 26.7932, 163.306, 46.2025, 151.281, 54.6413, 145.796, 53.7975, 140.943, 46.2025, 142.209, 28.0591, 153.391, 21.308, 157.821 )
+bones = [ "badan1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/pedang", PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "badan1/leher/bahu kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kanan bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kanan bawah/telapak2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="tgn kanan" type="Polygon2D" parent="badan1"]
+position = Vector2( 29.7552, 13.2949 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 64.7679, 70.6755, 55.2743, 76.3717, 46.6245, 82.0679, 43.038, 85.4435, 45.7806, 90.9287, 51.8987, 93.4603, 58.0169, 91.1397, 66.6667, 85.2325, 72.3629, 79.3253, 70.4641, 73.2072 )
+uv = PoolVector2Array( 64.7679, 70.6755, 55.2743, 76.3717, 46.6245, 82.0679, 43.038, 85.4435, 45.7806, 90.9287, 51.8987, 93.4603, 58.0169, 91.1397, 66.6667, 85.2325, 72.3629, 79.3253, 70.4641, 73.2072 )
+bones = [ "pedang", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri", PoolRealArray( 0.5, 1, 1, 1, 1, 1, 1, 1, 0.5, 0.5 ), "badan1/leher/bahu kiri/kiri/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="tgn kanan2" type="Polygon2D" parent="badan1/tgn kanan"]
+position = Vector2( 18.9927, -10.1294 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PoolVector2Array( 27.6371, 93.4603, 20.0422, 95.992, 16.0338, 100.633, 16.2447, 110.549, 19.4093, 116.878, 21.308, 118.566, 22.1519, 114.135, 23.8397, 113.292, 31.4346, 119.621, 38.3966, 125.317, 48.1013, 128.481, 49.5781, 127.849, 52.7426, 129.747, 51.8987, 132.912, 54.6413, 131.224, 55.4852, 129.114, 58.0169, 131.013, 57.5949, 132.701, 60.7595, 131.435, 58.8608, 127.005, 61.6034, 127.427, 61.6034, 121.097, 58.4388, 117.3, 54.2194, 118.988, 51.4768, 121.097, 51.4768, 121.097, 50, 122.996, 45.7806, 116.667, 40.9283, 111.815, 36.7089, 103.798, 38.3966, 100.211, 31.6456, 94.7262 )
+uv = PoolVector2Array( 27.6371, 93.4603, 20.0422, 95.992, 16.0338, 100.633, 16.2447, 110.549, 19.4093, 116.878, 21.308, 118.566, 22.1519, 114.135, 23.8397, 113.292, 31.4346, 119.621, 38.3966, 125.317, 48.1013, 128.481, 49.5781, 127.849, 52.7426, 129.747, 51.8987, 132.912, 54.6413, 131.224, 55.4852, 129.114, 58.0169, 131.013, 57.5949, 132.701, 60.7595, 131.435, 58.8608, 127.005, 61.6034, 127.427, 61.6034, 121.097, 58.4388, 117.3, 54.2194, 118.988, 51.4768, 121.097, 51.4768, 121.097, 50, 122.996, 45.7806, 116.667, 40.9283, 111.815, 36.7089, 103.798, 38.3966, 100.211, 31.6456, 94.7262 )
+bones = [ "pedang", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah", PoolRealArray( 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.55, 0.55, 0.55, 0.55, 0.55, 0.55, 0.55, 0.55, 0.05, 0.55, 0.05, 0.05, 0.05, 0.55, 0.55, 0.55, 0.55, 1, 1, 1, 1, 1 ), "badan1/leher/bahu kiri/kiri/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.45, 0.45, 0.45, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah", PoolRealArray( 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.05, 0.05, 0.05, 0.05, 0.05 ), "badan1/leher/bahu kanan/kanan/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="kaki kiri" type="Polygon2D" parent="badan1"]
+position = Vector2( -18.8074, -11.8048 )
+z_index = -1
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 117.089, 141.787, 121.519, 151.492, 124.262, 164.572, 125.738, 170.69, 130.169, 174.066, 137.975, 175.121, 144.304, 169.424, 141.139, 155.289, 138.397, 144.53, 131.646, 139.256, 122.152, 138.834 )
+uv = PoolVector2Array( 117.089, 141.787, 121.519, 151.492, 124.262, 164.572, 125.738, 170.69, 130.169, 174.066, 137.975, 175.121, 144.304, 169.424, 141.139, 155.289, 138.397, 144.53, 131.646, 139.256, 122.152, 138.834 )
+bones = [ "pedang", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri", PoolRealArray( 1, 1, 0.95, 0.45, 0.45, 0.45, 0.45, 1, 1, 1, 1 ), "badan1/badan2/kaki kiri/kaki kiri2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="kaki kiri2" type="Polygon2D" parent="badan1/kaki kiri"]
+position = Vector2( -5.67995, -14.5611 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PoolVector2Array( 131.224, 181.872, 126.793, 190.311, 124.051, 198.116, 123.207, 205.922, 122.574, 210.775, 120.464, 218.792, 121.519, 221.323, 129.747, 222.8, 133.544, 221.956, 145.992, 224.277, 156.329, 223.855, 157.595, 216.682, 152.532, 212.884, 145.148, 210.775, 140.295, 205.711, 138.397, 205.078, 142.827, 196.218, 148.734, 188.623, 150, 181.239, 138.397, 181.239 )
+uv = PoolVector2Array( 131.224, 181.872, 126.793, 190.311, 124.051, 198.116, 123.207, 205.922, 122.574, 210.775, 120.464, 218.792, 121.519, 221.323, 129.747, 222.8, 133.544, 221.956, 145.992, 224.277, 156.329, 223.855, 157.595, 216.682, 152.532, 212.884, 145.148, 210.775, 140.295, 205.711, 138.397, 205.078, 142.827, 196.218, 148.734, 188.623, 150, 181.239, 138.397, 181.239 )
+bones = [ "pedang", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2", PoolRealArray( 0.9, 0.9, 0.9, 0.9, 0.45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.45, 0.45, 0.9, 0.9, 0.9, 0.9 ), "badan1/badan2/kaki kiri/kaki kiri2/telapak", PoolRealArray( 0, 0, 0, 0, 0.45, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.45, 0.45, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="kaki kanan" type="Polygon2D" parent="badan1"]
+position = Vector2( 7.82095, -14.5611 )
+z_index = -1
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 70.8861, 143.897, 75.5274, 156.344, 78.481, 169.003, 80.1688, 175.543, 90.0844, 178.496, 98.7342, 175.965, 97.6793, 165.627, 93.4599, 150.859, 89.8734, 142.842, 81.6456, 140.522 )
+uv = PoolVector2Array( 70.8861, 143.897, 75.5274, 156.344, 78.481, 169.003, 80.1688, 175.543, 90.0844, 178.496, 98.7342, 175.965, 97.6793, 165.627, 93.4599, 150.859, 89.8734, 142.842, 81.6456, 140.522 )
+bones = [ "pedang", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2", PoolRealArray( 0.45, 0.45, 0.45, 0.45, 0.45, 0.45, 0.45, 0.45, 0.45, 0.45 ), "badan1/badan2/kaki kanan2/kaki kanan 2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="kaki kanan2" type="Polygon2D" parent="badan1/kaki kanan"]
+position = Vector2( 2.53235, -12.4379 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PoolVector2Array( 78.27, 182.083, 76.5823, 188.201, 71.73, 195.796, 70.2532, 205.922, 69.6203, 212.462, 68.1435, 218.37, 67.9325, 223.011, 73.6287, 225.121, 77.4262, 225.121, 77.6371, 223.433, 82.4894, 224.699, 90.5063, 225.965, 95.3587, 227.019, 103.797, 226.597, 104.641, 221.323, 103.797, 215.416, 97.6793, 215.205, 89.6624, 209.72, 85.865, 206.555, 89.8734, 198.538, 96.8354, 187.99, 88.3966, 183.981 )
+uv = PoolVector2Array( 78.27, 182.083, 76.5823, 188.201, 71.73, 195.796, 70.2532, 205.922, 69.6203, 212.462, 68.1435, 218.37, 67.9325, 223.011, 73.6287, 225.121, 77.4262, 225.121, 77.6371, 223.433, 82.4894, 224.699, 90.5063, 225.965, 95.3587, 227.019, 103.797, 226.597, 104.641, 221.323, 103.797, 215.416, 97.6793, 215.205, 89.6624, 209.72, 85.865, 206.555, 89.8734, 198.538, 96.8354, 187.99, 88.3966, 183.981 )
+bones = [ "pedang", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2", PoolRealArray( 0.9, 0.9, 0.9, 0.9, 0.9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.9, 0.9, 0.9, 0.9, 0.9 ), "badan1/badan2/kaki kanan2/kaki kanan 2/telapak", PoolRealArray( 0, 0, 0, 0, 0.9, 0.9, 0.9, 0.9, 1, 1, 1, 0.9, 0.9, 0.9, 0.9, 0.45, 0.45, 0.45, 0, 0, 0, 0 ) ]
+
+[node name="badan2" type="Polygon2D" parent="badan1"]
+position = Vector2( 0.90567, -1.43439 )
+z_index = -1
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 77.0042, 117.3, 78.27, 129.114, 81.4346, 133.545, 87.1308, 135.232, 98.5232, 134.811, 109.283, 134.811, 113.08, 130.802, 113.08, 119.832, 108.228, 111.393, 97.0464, 107.806, 86.9198, 107.595, 83.5443, 109.705 )
+uv = PoolVector2Array( 77.0042, 117.3, 78.27, 129.114, 81.4346, 133.545, 87.1308, 135.232, 98.5232, 134.811, 109.283, 134.811, 113.08, 130.802, 113.08, 119.832, 108.228, 111.393, 97.0464, 107.806, 86.9198, 107.595, 83.5443, 109.705 )
+bones = [ "pedang", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2", PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "badan1/badan2/kaki kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="kepala2" type="Polygon2D" parent="badan1"]
+position = Vector2( 71.59, 18.5948 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 33.3025, 10.1307, 41.3534, 8.43581, 50.8873, 9.70699, 57.8788, 14.368, 63.1754, 21.5714, 62.9636, 29.1985, 62.1161, 35.1307, 67.8364, 42.3341, 67.4127, 44.2409, 56.1839, 38.5206, 54.489, 43.3934, 55.972, 48.69, 57.0314, 51.6561, 53.2178, 57.1646, 45.8025, 62.2494, 42.6246, 63.3087, 42.4127, 64.5799, 34.9975, 65.0036, 33.9381, 62.4612, 31.1839, 59.0714, 24.828, 56.529, 19.5314, 57.1646, 21.2263, 54.1985, 17.8364, 52.5036, 11.9042, 53.1392, 16.1415, 49.5375, 9.99745, 47.8426, 14.0229, 44.6646, 9.57372, 41.9104, 14.6585, 36.6138, 8.72626, 31.529, 13.1754, 29.4104, 7.03136, 25.1731, 16.7771, 23.9019, 13.1754, 16.2748, 21.8619, 19.8765, 26.0992, 14.5799 )
+uv = PoolVector2Array( 33.3025, 10.1307, 41.3534, 8.43581, 50.8873, 9.70699, 57.8788, 14.368, 63.1754, 21.5714, 62.9636, 29.1985, 62.1161, 35.1307, 67.8364, 42.3341, 67.4127, 44.2409, 56.1839, 38.5206, 54.489, 43.3934, 55.972, 48.69, 57.0314, 51.6561, 53.2178, 57.1646, 45.8025, 62.2494, 42.6246, 63.3087, 42.4127, 64.5799, 34.9975, 65.0036, 33.9381, 62.4612, 31.1839, 59.0714, 24.828, 56.529, 19.5314, 57.1646, 21.2263, 54.1985, 17.8364, 52.5036, 11.9042, 53.1392, 16.1415, 49.5375, 9.99745, 47.8426, 14.0229, 44.6646, 9.57372, 41.9104, 14.6585, 36.6138, 8.72626, 31.529, 13.1754, 29.4104, 7.03136, 25.1731, 16.7771, 23.9019, 13.1754, 16.2748, 21.8619, 19.8765, 26.0992, 14.5799 )
+bones = [ "badan1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/telapak1", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kiri/kiri/kiri bawah/pedang", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kanan bawah", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/bahu kanan/kanan/kanan bawah/telapak2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/leher/kepala2", PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "badan1/badan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kiri/kaki kiri2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "badan1/badan2/kaki kanan2/kaki kanan 2/telapak", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="badan1" type="Bone2D" parent="Skeleton2D"]
+position = Vector2( 140.313, 137.652 )
+rotation = 1.33281
+rest = Transform2D( 1, 0, 0, 1, 108.848, 92.4797 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="leher" type="Bone2D" parent="Skeleton2D/badan1"]
+position = Vector2( 7.36563, -26.5981 )
+rotation = -1.56688
+rest = Transform2D( 0.00391466, -0.999992, 0.999992, 0.00391466, 7.36563, -26.5981 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="kepala" type="Bone2D" parent="Skeleton2D/badan1/leher"]
+position = Vector2( 7.78119, 1.60636 )
+rotation = 0.167626
+rest = Transform2D( 0.985984, 0.166842, -0.166842, 0.985984, 7.78119, 1.60636 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="bahu kiri" type="Bone2D" parent="Skeleton2D/badan1/leher"]
+rest = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="kiri" type="Bone2D" parent="Skeleton2D/badan1/leher/bahu kiri"]
+position = Vector2( -1.27727, -12.6803 )
+rotation = 1.41386
+rest = Transform2D( -0.980826, 0.194885, -0.194885, -0.980826, -1.27727, -12.6803 )
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="kiri bawah" type="Bone2D" parent="Skeleton2D/badan1/leher/bahu kiri/kiri"]
+position = Vector2( 20.0373, 28.2535 )
+rotation = -0.0654217
+rest = Transform2D( 0.998109, 0.061472, -0.061472, 0.998109, 20.0373, 28.2535 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="telapak1" type="Bone2D" parent="Skeleton2D/badan1/leher/bahu kiri/kiri/kiri bawah"]
+position = Vector2( 24.1662, -30.2624 )
+rotation = -4.24074
+rest = Transform2D( -0.344332, -0.938848, 0.938848, -0.344332, 24.1662, -30.2624 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="pedang" type="Bone2D" parent="Skeleton2D/badan1/leher/bahu kiri/kiri/kiri bawah"]
+position = Vector2( 31.0868, -47.9145 )
+rotation = -1.72473
+rest = Transform2D( -0.455391, -0.890292, 0.890292, -0.455391, 24.9629, -30.9347 )
+
+[node name="bahu kanan" type="Bone2D" parent="Skeleton2D/badan1/leher"]
+rest = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="kanan" type="Bone2D" parent="Skeleton2D/badan1/leher/bahu kanan"]
+position = Vector2( 3.14102, 6.57892 )
+rotation = 2.90093
+rest = Transform2D( -0.95902, 0.283338, -0.283338, -0.95902, -0.759598, 9.97575 )
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="kanan bawah" type="Bone2D" parent="Skeleton2D/badan1/leher/bahu kanan/kanan"]
+position = Vector2( 33.0619, 2.38651 )
+rotation = 1.77156
+rest = Transform2D( 0.990047, 0.140738, -0.140738, 0.990047, 33.0619, 2.38651 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="telapak2" type="Bone2D" parent="Skeleton2D/badan1/leher/bahu kanan/kanan/kanan bawah"]
+position = Vector2( 15.4538, 1.51782 )
+rotation = -0.743943
+rest = Transform2D( 0.414278, -0.91015, 0.91015, 0.414278, 15.4538, 1.51782 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="kepala2" type="Bone2D" parent="Skeleton2D/badan1/leher"]
+position = Vector2( 7.91223, 2.3257 )
+rotation = 0.183777
+rest = Transform2D( 0.988559, 0.184021, -0.182938, 0.982742, 7.91223, 2.3257 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="badan2" type="Bone2D" parent="Skeleton2D/badan1"]
+rotation = 1.29519
+rest = Transform2D( 0.0635639, 0.997978, -0.997978, 0.0635639, 0, 0 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="kaki kiri" type="Bone2D" parent="Skeleton2D/badan1/badan2"]
+position = Vector2( 25.5431, 0.923927 )
+rotation = 0.934919
+rest = Transform2D( 1, 0, 0, 1, 21.3993, -7.65768 )
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="kaki kiri2" type="Bone2D" parent="Skeleton2D/badan1/badan2/kaki kiri"]
+position = Vector2( 24.5623, -5.81614 )
+rotation = -0.370074
+rest = Transform2D( 0.916126, 0.400889, -0.400889, 0.916126, 24.5623, -5.81614 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="telapak" type="Bone2D" parent="Skeleton2D/badan1/badan2/kaki kiri/kaki kiri2"]
+position = Vector2( 32.6883, 2.47858 )
+rotation = 5.44787
+rest = Transform2D( -0.0731617, -0.99732, 0.99732, -0.0731617, 32.6883, 2.47858 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="kaki kanan2" type="Bone2D" parent="Skeleton2D/badan1/badan2"]
+position = Vector2( 20.9416, 12.4047 )
+rotation = 1.14879
+rest = Transform2D( 1, 0, 0, 1, 20.9416, 12.4047 )
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="kaki kanan 2" type="Bone2D" parent="Skeleton2D/badan1/badan2/kaki kanan2"]
+position = Vector2( 24.5623, -5.81614 )
+rotation = -0.346555
+rest = Transform2D( 0.916126, 0.400889, -0.400889, 0.916126, 24.5623, -5.81614 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="telapak" type="Bone2D" parent="Skeleton2D/badan1/badan2/kaki kanan2/kaki kanan 2"]
+position = Vector2( 35.4153, 2.79291 )
+rotation = -0.67303
+rest = Transform2D( -0.0731617, -0.99732, 0.99732, -0.0731617, 35.4153, 2.79291 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/death1 = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -6,7 +6,6 @@ const maxFallSpeed = 800
 const maxMoveSpeed = 300
 const moveSpeed = 120
 const jumpForce = -1050
-const maxJump = 2
 const cdBlink = 1
 const smoke = preload("res://Prefabs/Util/smoke.tscn")
 
@@ -16,6 +15,7 @@ var motion = Vector2()
 var jumpCount = 0
 var ground = 0
 var shootCD = 2
+var attackDelay = 0
 var timerHp = 0
 var knockX = 500
 var knockY = -1000
@@ -24,6 +24,7 @@ var isMeleeAttacking = false
 var isKnockingBack = false
 var afterGethitCount = 0
 var isInvisible = false
+var isActive = true
 
 func _ready():
 	position = GlobalPlayer.getPos()
@@ -36,50 +37,40 @@ func _physics_process(delta):
 	timeBlinkCount += delta
 	afterGethitCount += delta
 	shootCD += delta
-
-	if(Input.is_action_just_pressed("p")):
-		$timestop.ZaWarudo()
-		$TimerGhost.start(0.1)
-
-
+	attackDelay += delta
+	
 	if(is_on_floor()):
 		jumpCount = 0
 		ground = motion.y
 	
-	if(get_position().y > 1000):
-		GlobalPlayer.setHp(GlobalPlayer.getHp() - 5)
-		ReturnToCheckpoint()
-	
 	FallGravity()
 
-	if(!GlobalPlayer.get_is_DialogActive()):
+	if(!GlobalPlayer.get_is_DialogActive() and isActive and !dead):
 		if(!isKnockingBack):
 			if(!isMeleeAttacking):
 				Movement()
 				Jump()
-			if(shootCD > 0.3):
+			if(attackDelay > 0.4):
 				Attack()
 
 		motion = move_and_slide(motion,up)
 			
 		if(Input.is_action_just_pressed("shoot")):
-			if(GlobalPlayer.getHp() > 1 and shootCD > 0.3):
+			if(shootCD > 0.3):
 				shootCD = 0
 				Shoot()
-		
-		timerHp += delta
-		GenerateHp()
-		
-		ChangeSkills()
-	
-	else:
+	else:	
 		$AnimationPlayer.play("idle")
 		motion = move_and_slide(Vector2(0,maxFallSpeed), up)
 		
+	if(position.y > 1000):
+		GlobalPlayer.setHp(0)
+		
 	if(GlobalPlayer.getHp() < 1 and !dead):
 		dead = true
-		$Explotion.setExplode()
-
+		$Sprite.visible = false
+		$Jake.Death()
+	
 func LoadEquipments():		
 	var allTypeEquipment = ["head", "sword", "sword2", "body"]
 	for type in allTypeEquipment:
@@ -99,9 +90,8 @@ func OnRemoveItem(equipmentName):
 	return
 
 func Destroy():
+	SoundManager.stop("MainMusic")
 	get_tree().change_scene("res://Scene/Death.tscn")
-	queue_free()
-
 
 func ChangeSkills():
 	if(Input.is_action_just_pressed("skillUp")):
@@ -110,7 +100,8 @@ func ChangeSkills():
 		GlobalPlayer.ChangeSkillDown()
 	
 func Shoot():
-	GlobalPlayer.minHp(2)
+	SoundManager.play_se("shoot")
+	GlobalPlayer.setSkillCD(10)
 	var pathSkill = GlobalPlayer.getActiveSkillPath()
 	
 	var loadSkill = load(pathSkill)
@@ -126,7 +117,10 @@ func FallGravity():
 
 func ReturnToCheckpoint():
 	position = GlobalPlayer.getPos()
-	
+
+func setIsActive(bol):
+	isActive = bol	
+
 func Movement():
 	if(GlobalPlayer.getFacing()):
 		$Sprite.flip_h = false
@@ -138,7 +132,7 @@ func Movement():
 	motion.x = clamp(motion.x,-maxMoveSpeed,maxMoveSpeed)
 	
 	if(Input.is_action_pressed("right")):
-		if(Input.is_action_just_pressed("shift")):
+		if(Input.is_action_just_pressed("shift") and GlobalPlayer.getIsBlinkActive()):
 			if(timeBlinkCount > 1):
 				timeBlinkCount = 0
 				poofSmoke(position)
@@ -153,7 +147,7 @@ func Movement():
 		GlobalPlayer.setFacing(true)
 		
 	elif(Input.is_action_pressed("left")):
-		if(Input.is_action_just_pressed("shift")):
+		if(Input.is_action_just_pressed("shift") and GlobalPlayer.getIsBlinkActive()):
 			if(timeBlinkCount > 1):
 				timeBlinkCount = 0
 				poofSmoke(position)
@@ -169,28 +163,40 @@ func Movement():
 		
 	else:
 		motion.x = lerp(motion.x,0,0.5)
-		$AnimationPlayer.play("idle")
+		if(isInvisible):
+			$AnimationPlayer.play("idleInvisible")
+		else:
+			$AnimationPlayer.play("idle")
 	
 	if(!is_on_floor()):
 		if(motion.y > ground):
 			$AnimationPlayer.play("fall")
 		else:
 			$AnimationPlayer.play("jump")
-
+			
 func poofSmoke(pos):
 	var smokeBlink = smoke.instance()
+	if(is_on_floor()):
+		smokeBlink.setType("idle1")
+		smokeBlink.FlipSprite($Sprite.flip_h)
+	else:
+		smokeBlink.setType("idle")
+	SoundManager.play_se("blink")
 	smokeBlink.setPosition(pos)
 	get_parent().add_child(smokeBlink)
 	
 
 func Jump():
-	if(Input.is_action_just_pressed("jump") and jumpCount < maxJump ):
+	if(Input.is_action_just_pressed("jump") and jumpCount < GlobalPlayer.maxJump ):
+		SoundManager.play_se("jump")
 		motion.y = jumpForce	
 		jumpCount += 1
 		
 func Attack():
 	if(Input.is_action_just_pressed("attack")):
 		isMeleeAttacking = true
+		SoundManager.play_se("attack")
+		attackDelay = 0
 		$TimerMelee.start(0.4)
 		motion.x = lerp(motion.x,0,1)
 		$AnimationPlayer.play("attack")
@@ -222,7 +228,6 @@ func KnockBack(lr):
 func DefaultCollisionLayer():
 	set_collision_layer_bit(1,true)
 	set_collision_mask_bit(0,true)
-	set_collision_mask_bit(3,true)
 	set_collision_mask_bit(4,true)
 	set_collision_mask_bit(6,true)
 	
@@ -232,19 +237,29 @@ func ResetCollisionLayer():
 		set_collision_mask_bit(x,false)
 	
 func PlayerGetHit(dmg):
-	afterGethitCount = 0
-	
-	if(GlobalPlayer.getEquipmentObject("body") != null):
-		GlobalPlayer.sendRawDmg(dmg)
-	else:
-		GlobalPlayer.minHp(dmg)
+	if(!GlobalPlayer.get_is_DialogActive()):
+		afterGethitCount = 0
+		SoundManager.play_se("hurt")
+		if(GlobalPlayer.getEquipmentObject("body") != null):
+			GlobalPlayer.sendRawDmg(dmg)
+		else:
+			GlobalPlayer.minHp(dmg)
 	
 func _on_swordHit_body_entered(body):
 	if(body.has_method("setMotion")):
 		body.setMotion(body.position - getPosition())
 	else:
 		if(body.has_method("MeleeHitColide")):
-			body.MeleeHitColide(2)
+			body.MeleeHitColide(5)
+			if(body.has_method("KnockBack")):
+				if(body.position.x - position.x > 0):
+					body.KnockBack(1)
+				else:
+					body.KnockBack(-1)
+				
+	var particle = preload("res://Prefabs/Player/Skills/SwordParticle.tscn").instance()
+	particle.setPosition(body.position)
+	get_parent().add_child(particle)
 
 func _on_TimerKnock_timeout():
 	isKnockingBack = false
@@ -259,10 +274,5 @@ func _on_TimerInvisible_timeout():
 	ResetCollisionLayer()
 	DefaultCollisionLayer()
 
-
-func _on_TimerGhost_timeout():
-	var ghost = preload("res://Prefabs/Player/ghost.tscn").instance()
-	get_parent().add_child(ghost)
-	ghost.position = position
-	ghost.frame = $Sprite.frame
-	ghost.flip_h = $Sprite.flip_h
+func getFacing():
+	return $Sprite.flip_h

@@ -3,7 +3,8 @@ extends KinematicBody2D
 const bulletPath = preload("res://Prefabs/Enemy/Bullet/TurretBullet.tscn")
 var cd = 0
 var active = false
-export(NodePath) var playerPath = "../Player"
+
+onready var playerPath = "../../Player"
 var player
 var hp = 10
 var destroyOnce = true
@@ -39,6 +40,7 @@ func ShootProjectile():
 	$Sprite/AnimationPlayer.play("shoot")
 	var bullet = bulletPath.instance()
 	
+	SoundManager.play_se("shoot")
 	get_parent().add_child(bullet)
 	bullet.setPosition(Vector2(position.x-80, position.y))
 	
@@ -50,9 +52,16 @@ func _on_VisibilityNotifier2D_screen_entered():
 	
 func MeleeHitColide(dmg):
 	hp -= dmg
+	ShowDamage(dmg)
 	
 func ElementHitColide(dmg,type):
 	hp -= dmg
+	ShowDamage(dmg)
+
+func ShowDamage(dmg):
+	var labelDmg = preload("res://Prefabs/UI/DamageNumber.tscn").instance()
+	add_child(labelDmg)
+	labelDmg.ShowDamage(dmg)
 	
 func CounterHit():
 	hp = 0
@@ -74,4 +83,4 @@ func _on_AreaCollide_body_entered(body):
 		else:
 			body.KnockBack(1)
 		if(body.has_method("PlayerGetHit")):
-			body.PlayerGetHit(2)
+			body.PlayerGetHit(5)

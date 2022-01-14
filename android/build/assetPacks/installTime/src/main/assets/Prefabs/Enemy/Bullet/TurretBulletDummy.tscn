@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Texture/TurretBullet.png" type="Texture" id=1]
+[ext_resource path="res://Script/TurretBulletDummy.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 1.40791
+
+[node name="TurretBullet" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.0963135, 0.349152 )
+scale = Vector2( 2.86532, 2.86532 )
+texture = ExtResource( 1 )
+hframes = 3
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/idle = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="AreaCollide" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaCollide"]
+polygon = PoolVector2Array( 9.29419, 4.47116, 8.05403, 6.95148, 5.47451, 9.97746, -1.81762, 10.8704, -6.57982, 8.88612, -9.40738, 6.05856, -10.846, 0.601873, -10.3499, -4.65639, -8.21683, -7.83119, -4.19872, -9.71624, 0.861126, -11.006, 4.82963, -9.51781, 7.55797, -8.02963, 9.3438, -5.84695, 10.5344, -1.97766, 10.7824, 0.502653, 9.44301, 4.0743, 10.1375, 4.27273, 11.2784, 0.800291, 11.0304, -2.52333, 9.64144, -6.44223, 7.7564, -8.6249, 2.44853, -11.2044, -0.379032, -11.5021, -8.11761, -8.6249, -11.1436, -4.20994, -11.4412, 1.19714, -10.1019, 5.66171, -7.42312, 9.38218, -2.61131, 11.3664, 2.69656, 11.168, 6.51624, 10.0767, 9.74065, 5.21525 )
+
+[connection signal="body_entered" from="AreaCollide" to="." method="_on_AreaCollide_body_entered"]

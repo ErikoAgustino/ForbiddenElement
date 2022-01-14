@@ -3,54 +3,73 @@ extends Node
 signal addEquipment(path)
 signal removeEquipment(equipmentName)
 signal addInventoryItem(itemPath)
+signal addInventoryEquipment(itemPath)
 signal rawDamage(hp)
+signal DashActive()
+signal OnDetectObject(bol)
+signal SkillColdDown(cd)
 
 var pos = Vector2()
 var facingRight = true
 var dialogActive = false
-var hp
+var hp = 100
+var maxJump = 1
+var isBlinkActive = false
 var skillsPath = {}
 var skillsList = []
 var activeSkill
 var equipmentObject = {}
 var inventoryList = []
+var inventoryEquipmentList = []
+var skillCD = 0
 
 func _ready():
-	SoundManager.play_se("Sound_0")
-	
-	#default
-	hp = 200
-
-	equipmentObject["head"] = null
-	equipmentObject["sword"] = null
-	equipmentObject["sword2"] = null
-	equipmentObject["body"] = null
-	
+	Reset()
 
 	setPos(Vector2(100,-100))
 	facingRight = true
 
 	#TestRun
-	skillsPath["FireBall"] = "res://Prefabs/Player/Skills/FireBall.tscn"
-	skillsPath["IceBullet"] = "res://Prefabs/Player/Skills/IceBullet.tscn"
-	skillsPath["WaterBall"] = "res://Prefabs/Player/Skills/WaterBall.tscn"
+	skillsPath["HolyBall"] = "res://Prefabs/Player/Skills/HolyBall.tscn"
 	
-	skillsList.append("FireBall")
-	skillsList.append("IceBullet")
-	skillsList.append("WaterBall")
+	skillsList.append("HolyBall")
 	
 	activeSkill = 0
-	
+
 func _process(delta):
-	pass
-	
+	if(skillCD > 0):
+		setSkillCD(skillCD - delta)
+
+func getSkillCD():
+	return skillCD
+
+func setSkillCD(cd):
+	skillCD = cd
+	emit_signal("SkillColdDown", cd)
+
+func addInventoryEquipmentPath(item):
+	inventoryEquipmentList.append(item)
+	emit_signal("addInventoryEquipment", item)
+
+func getInventoryEquipmentListPath():
+	return inventoryEquipmentList
+
+func setInventoryEquipmentListPath(equipments):
+	inventoryEquipmentList = equipments
+
 func addInventoryItemPath(item):
 	inventoryList.append(item)
 	emit_signal("addInventoryItem", item)
 
+func removeInventoryItemPath(item):
+	inventoryList.remove(item)
+
 func getInventoryItemListPath():
 	return inventoryList
-		
+
+func setInventoryItemListPath(items):	
+	inventoryList = items
+	
 func setEquipmentObject(key, equipment):
 	equipmentObject[key] = equipment
 	emit_signal("addEquipment", equipment)
@@ -61,6 +80,16 @@ func removeEquipmentGlobal(type, equipmentName):
 	
 func getEquipmentObject(key):
 	return equipmentObject[key]
+
+func setEquipments(equipment):
+	equipmentObject = equipment
+
+func getEquipments():
+	var path = {}
+	for x in equipmentObject:
+		if(equipmentObject[x] != null):
+			path[x] = equipmentObject[x].filename
+	return path
 	
 func getAllEquipmentsObject():
 	return equipmentObject
@@ -91,8 +120,8 @@ func setHp(health):
 	
 func addHp(health):
 	hp += health
-	if(hp > 200):
-		hp = 200
+	if(hp > 100):
+		hp = 100
 	
 func sendRawDmg(health):
 	emit_signal("rawDamage", health)
@@ -102,7 +131,7 @@ func minHp(health):
 		hp -= health
 	
 func resetHealth():
-	hp = 200
+	hp = 100
 
 func getActiveSkillPath():
 	return skillsPath.get(skillsList[activeSkill])
@@ -121,3 +150,29 @@ func ChangeSkillDown():
 		activeSkill -= 1
 	else:
 		activeSkill = len(skillsList) - 1
+		
+func setIsBlinkActive(blink):
+	isBlinkActive = blink
+	if(blink):
+		emit_signal("DashActive")
+
+func getIsBlinkActive():
+	return isBlinkActive
+	
+func setMaxJump(jump):
+	maxJump = jump
+
+func getMaxJump():
+	return maxJump
+
+func DetectObject(bol):
+	emit_signal("OnDetectObject", bol)
+
+func Reset():
+	equipmentObject["head"] = null
+	equipmentObject["sword"] = null
+	equipmentObject["sword2"] = null
+	equipmentObject["body"] = null
+	inventoryList = []
+	inventoryEquipmentList = []
+

@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 const bulletPath = preload("res://Prefabs/Enemy/Bullet/RobotBullet.tscn")
 
-var playerPath = "../Player"
+onready var playerPath = "../../Player"
 var player
 var me
 var facingRight
@@ -17,7 +17,6 @@ var isGravity = false
 var active
 var elementReaction
 var hp
-var frozen
 var cdAtk = 0
 var destroyOnce = true
 
@@ -26,13 +25,11 @@ func _ready():
 	hp = 10
 	$HP.max_value = hp
 	$HP.value = hp
-	frozen = false
 	facingRight = true
-	elementReaction = get_node("Reaction")
 	player = get_node(playerPath)
 			
 func _physics_process(delta):
-	if(active and not frozen and destroyOnce):
+	if(active and destroyOnce):
 		me = get_position()
 		$AnimationPlayer.play("run")
 		EnemyMovement()
@@ -56,42 +53,20 @@ func _physics_process(delta):
 		$AreaCollide.queue_free()
 		$Sprite.visible = false
 		$Explotion.setExplode()
-		GlobalPlayer.addHp(5)
 	
-"""
-func CollideWithPlayer():
-	for x in get_slide_count():
-		var tempCollider = get_slide_collision(x).collider
-		print(tempCollider.name)
-"""	
 
 func MeleeHitColide(dmg):
 	hp -= dmg
+	ShowDamage(dmg)
 		
 func ElementHitColide(dmg, type):
-	if(active):
-		hp -= dmg
-		if(type == "Fireball"):
-			#GlobalPlayer.addHp(5)
-			#queue_free()
-			Reaction(elementReaction.ApplyElement("fire"))
-		elif(type == "IceBullet"):
-			Reaction(elementReaction.ApplyElement("ice"))
-		elif(type == "WaterBall"):
-			Reaction(elementReaction.ApplyElement("water"))
+	hp -= dmg
+	ShowDamage(dmg)
 
-func Reaction(reaction):
-	if(reaction == "frozen"):
-		elementReaction.setFrozen()
-		frozen = true
-		motion.x = lerp(motion.x,0,1)
-		$AnimationPlayer.stop()
-		$Timer.start(3)
-	elif(reaction == "vaporize"):
-		hp -= 1
-	elif(reaction == "melt"):
-		$Timer.start(0.1)
-		hp -= 2
+func ShowDamage(dmg):
+	var labelDmg = preload("res://Prefabs/UI/DamageNumber.tscn").instance()
+	add_child(labelDmg)
+	labelDmg.ShowDamage(dmg)
 
 func FallGravity():
 	motion.y += gravity
@@ -125,10 +100,6 @@ func EnemyMovement():
 		$Sprite.frame = 12
 		motion.x = lerp(motion.x,0,0.7)
 
-func _on_Frozen_timeout():
-	elementReaction.setUnFrozen()
-	frozen = false
-
 func _on_AreaCollide_body_entered(body):
 	if(body.has_method("KnockBack")):
 		if(body.getPosition().x - position.x < 0):
@@ -136,12 +107,13 @@ func _on_AreaCollide_body_entered(body):
 		else:
 			body.KnockBack(1)
 		if(body.has_method("PlayerGetHit")):
-			body.PlayerGetHit(2)
+			body.PlayerGetHit(5)
 
 
 func ShootProjectile():
 	var bullet = bulletPath.instance()
-				
+	
+	SoundManager.play_se("shoot")				
 	get_parent().add_child(bullet)
 	bullet.setPosition(position)
 

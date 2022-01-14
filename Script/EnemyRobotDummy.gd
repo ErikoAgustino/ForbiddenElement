@@ -60,6 +60,9 @@ func CollideWithPlayer():
 
 func MeleeHitColide(dmg):
 	hp -= dmg
+	var labelDmg = preload("res://Prefabs/UI/DamageNumber.tscn").instance()
+	add_child(labelDmg)
+	labelDmg.ShowDamage(dmg)
 		
 func ElementHitColide(dmg, type):
 	if(active):

@@ -10,6 +10,7 @@ var bulletRange = 5
 var bulletCurrentRange = 0
 var turnCount = 0
 var turn = 300
+var player
 
 func _ready():
 	$Sprite/AnimationPlayer.play("idle")
@@ -25,20 +26,20 @@ func _physics_process(delta):
 	if(motion.x > 0):
 		$Sprite.flip_h = false
 		turn = -300
-		if(get_parent().get_node("Player").getPosition().x - position.x < turn and turnCount < 1):
+		if(player.getPosition().x - position.x < turn and turnCount < 1):
 			turnCount += 1
-			setMotion(get_parent().get_node("Player").getPosition() - position)
+			setMotion(player.getPosition() - position)
 	else:
 		$Sprite.flip_h = true
-		if(get_parent().get_node("Player").getPosition().x - position.x > turn and turnCount < 1):
+		if(player.getPosition().x - position.x > turn and turnCount < 1):
 			turnCount += 1
-			setMotion(get_parent().get_node("Player").getPosition() - position)
+			setMotion(player.getPosition() - position)
 
 
 func _on_AreaCollide_body_entered(body):
 	$CollisionShape2D.queue_free()
 	if(body.has_method("PlayerGetHit")):
-		body.PlayerGetHit(10)
+		body.PlayerGetHit(7)
 	queue_free()
 
 func setMotion(target):
@@ -47,3 +48,5 @@ func setMotion(target):
 func setPosition(pos):
 	position = pos
 
+func setPlayer(pl):
+	player = pl

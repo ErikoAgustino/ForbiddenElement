@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 
-
 var motion = Vector2()
 var speed = 1000
 var destroyOnce = true

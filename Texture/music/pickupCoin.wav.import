@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pickupCoin.wav-6c85d8cb42b98f2483a55fcb38a29e61.sample"
+
+[deps]
+
+source_file="res://Texture/music/pickupCoin.wav"
+dest_files=[ "res://.import/pickupCoin.wav-6c85d8cb42b98f2483a55fcb38a29e61.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

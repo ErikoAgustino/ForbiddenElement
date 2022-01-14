@@ -13,6 +13,11 @@ func FadeOut():
 	visible = true
 	$AnimationPlayer.play("transitionOut")
 	$Timer.start(0.3)
+	
+func FadeOut3():
+	visible = true
+	$AnimationPlayer.play("transitionOut3")
+	$Timer.start(3)
 
 func hide():
 	visible = false

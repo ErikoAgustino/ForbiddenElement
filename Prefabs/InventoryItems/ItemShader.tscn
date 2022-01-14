@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://godot.png" type="Texture" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode blend_add; //Comment this if you want another render mode.
+uniform vec2 center = vec2(0.5);
+uniform float size: hint_range(0.0,5.0) = 1.0; //change size to well, change the size of your gradient
+uniform vec2 squishness = vec2(1.0); // how squashed your gradient is
+
+//choose colors in the inspector
+uniform vec4 color1 : hint_color;
+uniform vec4 color2 : hint_color;
+uniform vec4 color3 : hint_color;
+uniform vec4 color4 : hint_color;
+uniform vec4 color5 : hint_color;
+uniform vec4 color6 : hint_color;
+
+//choose how far the colors are from each other in the inspector
+uniform float step1 : hint_range(0.0,1.0) = 0.159;
+uniform float step2 : hint_range(0.0,1.0) = 0.182;
+uniform float step3 : hint_range(0.0,1.0) = 0.233;
+uniform float step4 : hint_range(0.0,1.0) = 0.264;
+uniform float step5 : hint_range(0.0,1.0) = 0.265;
+uniform float step6 : hint_range(0.0,1.0) = 0.266;
+
+void fragment() {
+	float dist = distance(center*squishness,UV*squishness);
+	vec4 color = mix(color1, color2, smoothstep(step1*size, step2*size, dist));
+	color = mix(color, color3, smoothstep(step2*size, step3*size, dist));
+	color = mix(color, color4, smoothstep(step3*size, step4*size, dist));
+	color = mix(color, color5, smoothstep(step4*size, step5*size, dist));
+	color = mix(color, color6, smoothstep(step5*size, step6*size, dist));
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/center = Vector2( 0.5, 0.5 )
+shader_param/size = 1.8
+shader_param/squishness = Vector2( 1, 1 )
+shader_param/color1 = Color( 0.45098, 0.45098, 0.45098, 1 )
+shader_param/color2 = Color( 0.164706, 0.141176, 0.141176, 1 )
+shader_param/color3 = Color( 0.705882, 0.45098, 0.45098, 1 )
+shader_param/color4 = null
+shader_param/color5 = null
+shader_param/color6 = null
+shader_param/step1 = 0.159
+shader_param/step2 = 0.182
+shader_param/step3 = 0.233
+shader_param/step4 = 0.264
+shader_param/step5 = 0.265
+shader_param/step6 = 0.266
+
+[node name="shader" type="Sprite"]
+show_behind_parent = true
+material = SubResource( 2 )
+texture = ExtResource( 1 )

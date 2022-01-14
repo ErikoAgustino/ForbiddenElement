@@ -5,7 +5,7 @@ var enemyBoss
 var active
 
 func _ready():
-	enemyBoss = get_parent().get_node("EnemyMage")
+	enemyBoss = get_parent().get_node("enemy/EnemyMage")
 	active = false
 	
 func _process(delta):

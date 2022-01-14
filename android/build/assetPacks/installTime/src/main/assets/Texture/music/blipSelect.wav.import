@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/blipSelect.wav-178ebce4c96e53ae8086e881be65b127.sample"
+
+[deps]
+
+source_file="res://Texture/music/blipSelect.wav"
+dest_files=[ "res://.import/blipSelect.wav-178ebce4c96e53ae8086e881be65b127.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

@@ -25,6 +25,7 @@ func LoadDialog():
 func setActive():
 	visible = true
 	GlobalPlayer.set_is_DialogActive(true)
+	get_parent().get_node("AndroidControl").visible = false
 	index = 0
 	dialogs = LoadDialog()
 	$DialogBox/next/AnimationPlayer.play("idle")
@@ -32,7 +33,10 @@ func setActive():
 
 func _input(event):
 	if(Input.is_action_just_pressed("f") and index >= 1 and GlobalPlayer.get_is_DialogActive()):
+		$TouchScreenButton.visible = false
+		$TimerTouch.start(0.3)
 		if($DialogBox/Tween.is_active()):
+			SoundManager.stop("blip")
 			$DialogBox/Tween.stop_all()
 			$DialogBox/DialogText.percent_visible = 100
 		else:
@@ -46,6 +50,7 @@ func ShowDialog():
 		$DialogBox/DialogText.percent_visible = 0
 		$DialogBox/Tween.interpolate_property($DialogBox/DialogText, "percent_visible", 0, 1, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$DialogBox/Tween.start()
+		SoundManager.play_bgs("blip")
 		index += 1
 	else:
 		$Timer.start()
@@ -53,6 +58,13 @@ func ShowDialog():
 		$DialogBox/next/AnimationPlayer.stop()
 		visible = false
 		
-
 func _on_Timer_timeout():
 	GlobalPlayer.set_is_DialogActive(false)
+	get_parent().get_node("AndroidControl").visible = true
+	queue_free()
+
+func _on_TimerTouch_timeout():
+	$TouchScreenButton.visible = true
+
+func _on_Tween_tween_completed(object, key):
+	SoundManager.stop("blip")

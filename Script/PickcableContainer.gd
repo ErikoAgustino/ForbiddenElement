@@ -2,7 +2,7 @@ tool
 
 extends RigidBody2D
 
-export(String) var itemNodeName = ''
+export (String) var itemNodeName = ''
 
 var item = null
 var ready = false
@@ -14,7 +14,11 @@ func _ready():
 	
 func _input(event):
 	if(Input.is_action_just_pressed("f") and ready):
-		GlobalPlayer.addInventoryItemPath(getItem().getItemPath())
+		GlobalPlayer.DetectObject(false)
+		if(getItem().getType() == "equipment"):
+			GlobalPlayer.addInventoryEquipmentPath(getItem().getItemPath())
+		else:
+			GlobalPlayer.addInventoryItemPath(getItem().getItemPath())
 		queue_free()
 	
 func setItem(paramItem):
@@ -29,7 +33,9 @@ func setPosition(pos):
 func _on_Area2D_body_entered(body):
 	if(body.name == "Player"):
 		ready = true
+		GlobalPlayer.DetectObject(true)
 
 func _on_Area2D_body_exited(body):
 	if(body.name == "Player"):
 		ready = false
+		GlobalPlayer.DetectObject(false)

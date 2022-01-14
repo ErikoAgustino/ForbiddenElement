@@ -9,17 +9,18 @@ func _ready():
 	
 func setSlotItem(nama):
 	item = nama
-	if(item.getType() == "potion"):
-		$count.bbcode_enabled = true
-		addAmount(1)
+
+	$count.bbcode_enabled = true
+	addAmount(1)
 		
 func addAmount(smItem):
 	amount += smItem
-	$count.bbcode_text = "[right]" + str(amount) + "[/right]"
+	$count.bbcode_text =  str(amount)
 	
 func minAmount(smItem):
 	amount -= smItem
-	$count.bbcode_text = "[right]" + str(amount) + "[/right]"
+	GlobalPlayer.removeInventoryItemPath(item.getItemPath())
+	$count.bbcode_text = str(amount)
 	if(amount < 1):
 		item = null
 		for child in get_children():

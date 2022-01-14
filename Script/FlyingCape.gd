@@ -1,7 +1,7 @@
 extends Sprite
 
 var spriteTexture = preload("res://Texture/capeItem.png")
-var description = "+ Cape"
+var description = "+ Damage Reduction"
 var is_inUse
 var itemPath = "res://Prefabs/InventoryItems/FlyingCape.tscn"
 var slotIndex
@@ -25,11 +25,10 @@ func RemoveEquipment():
 		GlobalPlayer.removeEquipmentGlobal(getEquipmentType(), name)
 
 func OnPlayerGetHit(health):
-	health -= 1
+	health -= 3
 	if(health < 1):
 		GlobalPlayer.minHp(1)
 	else:
-		print(health)
 		GlobalPlayer.minHp(health)
 
 func getSpriteTexture():

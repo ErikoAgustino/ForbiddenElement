@@ -624,7 +624,6 @@ func play(sound_type : String, sound : String, from_position : float = 1.0, volu
 	var pitch = Default_Sounds_Properties[sound_type]["Pitch"] if pitch_scale < 0 else pitch_scale
 	var audiostream : AudioStreamPlayer
 	var sound_index = 0
-
 	if Audio_Files_Dictionary.has(sound):
 		if debug:
 			print_debug("Sound found on dictionary: " + sound)
@@ -638,7 +637,8 @@ func play(sound_type : String, sound : String, from_position : float = 1.0, volu
 	if Instantiated_Nodes.has(sound_path):
 		sound_index = Instantiated_Nodes.find(sound_path)
 		audiostream = Audiostreams[sound_index]
-		if audiostream.get_bus() != Audio_Busses[sound_type]:
+
+		if audiostream.get_bus() != Audio_Busses[sound_type] and is_instance_valid(audiostream):
 			audiostream.set_bus(Audio_Busses[sound_type])
 		if debug:
 			print_debug("Node preinstantiated " + sound_path)
@@ -669,13 +669,12 @@ func play(sound_type : String, sound : String, from_position : float = 1.0, volu
 				return
 		else:
 			sound_index = add_sound(sound_path, sound_type)
-		audiostream = Audiostreams[sound_index]
-		audiostream.set_stream(Stream)
-	
+			audiostream = Audiostreams[sound_index]
+			audiostream.set_stream(Stream)
+
 	audiostream.set_volume_db(volume)
 	audiostream.set_pitch_scale(pitch)
-	
-	
+
 	audiostream.play(from_position)
 	if audiostream.get_script() != null:
 		audiostream.set_sound_name(sound)

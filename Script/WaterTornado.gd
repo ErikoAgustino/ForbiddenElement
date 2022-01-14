@@ -3,7 +3,6 @@ extends KinematicBody2D
 var active
 var motion = Vector2()
 var speed = 500
-var startAt = 0
 
 func _ready():
 	$Sprite/AnimationPlayer.play("start")
@@ -11,8 +10,7 @@ func _ready():
 	$hit.visible = false
 	
 func _physics_process(delta):
-	startAt += delta
-	if(active and startAt > 0.3):
+	if(active):
 		$Sprite/AnimationPlayer.play("idle")
 		var collision = move_and_collide(motion.normalized() * delta * speed)
 		
@@ -27,11 +25,9 @@ func setMotion(target):
 
 func _on_AreaCollide_body_entered(body):
 	hitAnimation()
-		
 	if(body.has_method("PlayerGetHit")):
-		body.PlayerGetHit(30)
+		body.PlayerGetHit(19)
 
-	
 
 func _on_AreaCollide_area_entered(area):
 	hitAnimation()

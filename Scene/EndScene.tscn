@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Texture/light.png" type="Texture" id=1]
+[ext_resource path="res://Script/EndingScene.gd" type="Script" id=2]
+[ext_resource path="res://Texture/Fonts/ZenOldMincho-Black.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Texture/tileset/buttonFocus.tres" type="StyleBox" id=4]
+[ext_resource path="res://Texture/tileset/button.tres" type="StyleBox" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 3 )
+
+[node name="EndScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+margin_left = -100.352
+margin_right = 99.6479
+margin_bottom = 200.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]The end[/center]"
+text = "The end"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.02
+margin_left = 361.335
+margin_top = 480.0
+margin_right = -362.665
+margin_bottom = 518.0
+custom_constants/separation = 100
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="HBoxContainer"]
+margin_left = 99.0
+margin_right = 199.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 0 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_Exit_pressed"]

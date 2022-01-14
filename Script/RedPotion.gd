@@ -8,8 +8,8 @@ var itemPath = "res://Prefabs/InventoryItems/RedPotion.tscn"
 var slotIndex
 
 func _ready():
-	description = "Red potion + hp 50"
-	hp = 50
+	description = "+ hp 40"
+	hp = 40
 	
 func UseItem():
 	GlobalPlayer.addHp(hp)
@@ -21,7 +21,7 @@ func getDescription():
 	return description
 	
 func getType():
-	return "potion"
+	return "item"
 	
 func getInstance():
 	var temp = load(itemPath).instance()
